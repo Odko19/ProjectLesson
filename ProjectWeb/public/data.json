@@ -1,0 +1,66 @@
+{
+  "HTML": {
+    "tag": {
+      "title": "asdaagaaa",
+      "body": "JavaScript "
+    },
+    "tag1": {
+      "title": "asdaagaaa",
+      "body": "JavaScript "
+    },
+    "tag2": {
+      "title": "asdaagaaa",
+      "body": "JavaScript "
+    },
+    "tag3": {
+      "title": "asdaagaaa",
+      "body": "JavaScript "
+    }
+  },
+  "CSS": {
+    "tag": {
+      "title": "Flex",
+      "body": "sdjfsdjbf"
+    }
+  },
+  "JS": {
+    "Variables": {
+      "title": "Var, Let, Const",
+      "body": "Var- Хувьсагч,  Let - өөрчлөгдөг, Const - төгтмол өөрчлөгдөхгүй, "
+    },
+    "ArithmeticOperators": {
+      "title": "Adding, Multiplying, Const",
+      "body": "+ Addition, - Subtraction, * Multiplication, ++ Increment, -- Decrement"
+    },
+    "AssignmentOperators": {
+      "title": "JavaScript Assignment Operators",
+      "body": "image.png"
+    }
+  },
+  "REACT": {
+    "Lesson1": {
+      "title": "React",
+      "body": "2011 онд Jordan  Walke гаргаж ирсэн. JS дотор HTML элемент оруулж ирсэн. React нь web хуудсыг componant болгон хуваагаад тэр componant-уудаараа WEB хуудсаа бүтээдэг. Componant хооронд өгөгдөл дамжуулах өөрчлөлт хийхийг REACT хариуцан ажилладаг . Componant нь HTML + JS = JSX буюу javascript XML-ын өргөтгөлөөр ашигладаг"
+    },
+    "Lesson2": {
+      "title": "React Componant",
+      "body": "Кодын дахин ашиглалт өснө . Том хэмжээний код бичихгүй . Өөрчлөх сайжруулах алдааг засахад хялбар. Өгөгдлын эх үүсвэрийн 1 зарчимтай. Мод хэлбэрээр байрлана. react EVENT нь дээшээ дамждаг"
+    },
+    "Lesson3": {
+      "title": "Element",
+      "body": "<></> => tag дотор байх ёстой"
+    },
+    "Lesson4": {
+      "title": "Function componant",
+      "body": "Tag return хийхийг Function componant гэнэ. Бичигдэл: function Main(){ return (<div> <h1>LESSONS</h1></div>);}export default Main"
+    },
+    "Lesson5": {
+      "title": "Hook",
+      "body": "useState ашиглаад function дотор (state- төлөв) бий болгодог. Ингэснээр Class componant ижилхэн болсон. use-ыг хэрэглэсэн бол HOOk гэсэн үг. Бичигдэл: const [lessons, setLessons] = useState({}) "
+    },
+    "Lesson6": {
+      "title": "Router",
+      "body": "Loop дотор hook дуудахгүй, useState- хамгийн дээр тавигдах ёстой, Condition дотор дууддаггүй"
+    }
+  }
+}
