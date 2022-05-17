@@ -1,12 +1,11 @@
 import React from "react";
 
 function Content({ data }) {
-  console.log(data);
+  // console.log(data);
   return (
     <div>
-      <p>{data.title}</p>
+      <h4>{data.title}</h4>
       <p> {data.body} </p>
-      <img src={data.image} alt="" />
     </div>
   );
 }

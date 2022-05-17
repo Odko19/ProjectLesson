@@ -6,22 +6,33 @@ import App from "./App";
 
 function Contents({ data }) {
   // console.log(data);
+  const style = {
+    bg: {
+      backgroundColor: "#1f2023",
+      borderRadius: "10px",
+    },
+    a: {
+      textDecorationLine: "none",
+      color: "white",
+    },
+  };
   return (
     <>
       <Container>
         <div className="d-flex justify-content-between">
           {Object.keys(data).map((title, i) => {
             return (
-              <div>
-                <Link key={i} to={`${title}`}>
+              <div style={style.bg} className="my-3 p-3">
+                <Link key={i} to={`${title}`} style={style.a}>
                   {title}
                 </Link>
               </div>
             );
           })}
         </div>
-        <Outlet />
-
+        <div className="my-3">
+          <Outlet />
+        </div>
         <App />
       </Container>
     </>

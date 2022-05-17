@@ -1,66 +1,143 @@
 {
   "HTML": {
-    "tag": {
-      "title": "asdaagaaa",
-      "body": "JavaScript "
+    "Lesson-1": {
+      "title": "HTML /Documents/",
+      "body": " <html>-ээр эхэлж </html>-ээр төгсөх болно. Үзэгдэх хэсгийг <body>-ээс эхэлж </body>-ны хооронд бичнэ  <!DOCTYPE html><html><head><meta charset=utf-8></head><body><h1>Энэ бол гарчиг</h1><p>Энэ бол догол мөр</p></body> </html>"
     },
-    "tag1": {
-      "title": "asdaagaaa",
-      "body": "JavaScript "
+    "Lesson-2": {
+      "title": "Толгой хэсэг /Head/",
+      "body": "HTML head элемент нь метадата өгөгдлийг агуулдаг ба html болон body элементийн хооронд бичигдэнэ. HTML метадата гэдэг таны HTML хуудасны тухай өгүүлнэ. Метадата нь дэлгэцэд харагдахгүй.  <title>, <style>, <meta>, <link>, <script> болон <base> тагуудад мета өгөгдлийг зааж өгнө. <title> элементэд HTML хуудасны гарчгийг зааж өгнө. <style> элементэд тухайн HTML хуудасны элементийн загварыг тодорхойлно. <link> элементийг ашиглан гадаад CSS-г холбож болно. <meta> элементэд хуудасны тайлбар, түлхүүр үг, зохиогч болон бусад өгөгдлийг зааж өгдөг."
     },
-    "tag2": {
-      "title": "asdaagaaa",
-      "body": "JavaScript "
+    "Lesson-3": {
+      "title": "Гарчиг /Headings/",
+      "body": "HTML нь гарчгийг <h1> ээс <h6> зургаан tag-д тодорохойлдог бөгөөд <h1>-г хамгийн чухал ач холбогдолтой гэж үздэг бөгөөд хамгийн том нь бадаг бол <h6>-г хамгийн бага ач холбогдолтой буюу хамгийн жижиг гарчиг гэж үздэг. "
     },
-    "tag3": {
-      "title": "asdaagaaa",
-      "body": "JavaScript "
+    "Lesson-4": {
+      "title": " ID  атрибут",
+      "body": "HTML элемент дотор оо id атрибут нь дахин давтагдашгүй байна. CSS болон JavaScript нь id атрибутын утгыг ашиглан тодорхой даалгаврыг гүйцэтгэж болно. СSS-д id атрибутыг # тэмдэгтийн араас элементийн нэрийг өгнө."
+    },
+    "Lesson-5": {
+      "title": "Class  атрибут",
+      "body": "HTML-д класс атрибут нь ижил загвартай элементүүдийн загварыг тодорхойлдог. CSS-д классыг тодорхойлохдоо (.) тэмдэгтийн араас классын нэрийг бичнэ. class атрибутыг inline элементэд хэрэглэж болно."
+    },
+    "Lesson-6": {
+      "title": "HTML Responsive",
+      "body": "Responsive вэб дизайн гэдэг нь вэб сайтад хандаж буй төхөөрөмжид (компьютер, Гар утас, таблет, ...) тохируулан автоматаар вэб сайтын загварыг өөрчлөх, зарим элементийг нуух, томруулах, багасгах зэрэг өөрчлөлтийг хийж тухайн төхөөрөмжид илүү тохиромжтой, эвтэйхэн харагдуулахыг Responsive вэб дизайн гэнэ. "
+    },
+    "Lesson-7": {
+      "title": "Симантик элемент /Semantic/",
+      "body": "Semantic гэдэг нь Утга гэсэн үг юм. Semantic элемент гэдэг нь тодорхой утга агуулдаг элементийг хэлэх бөгөөд хөгжүүлэгч болон Интернет хөтөч хоёр нэг ойлголттой болох зорилготой гэж ойлгож болно.   Semantic биш элементүүд. Жишээ нь: <div>, <span> гэх мэт байх өгөөд эдгээр элементүүдийг өргөн хүрээнд ашигладаг. Симантик элементүүд :<article> <aside>,<details>,<figcaption>,<figure>, <footer>, <header>,<main>,<mark>,<nav>,<section>, <summary>, <time> Example:<!DOCTYPE html lang=en-US><html> <body><h1>Монгол ардын үлгэр</h1><section><h2>Сүүлэн хүү</h2><p>Эрт урьд цагт эмгэн өвгөн хоёр амьдран сууж байжээ. Эмгэн нэг өдөр ямаагаа хариулж яваад тургиж орхижээ. Гэтэл нэг ямааныг...</p></section><section><h2>Цэцэн бүсгүйн үлгэр</h2><p>Эрт урьд цагт их цэцэн ухаантай бүсгүй байж гэнэ.Тэр жилийн нэг баян хүний тэнэг хүүтэй толгой холбосон юм байжээ.</p></section>  </body></html>"
+    },
+    "Lesson-8": {
+      "title": "Layout",
+      "body": "html-д вэб хуудсыг зохион байгуулдаг үндсэн таван арга байдаг бөгөөд эдгээр нь өөрийн гэсэн давуу болон сул талуудтай байдаг. HTML tables, CSS float, CSS flexbox, CSS framework, CSS grid"
     }
   },
   "CSS": {
-    "tag": {
+    "Lesson-1": {
+      "title": "CSS Бичиглэл /Syntax/",
+      "body": " CSS-н бичиглэлийн дүрэм нь Selector буюу Сонгогч, Declaration буюу тунхаг гэсэн хоёр блокоос бүрдэнэ. HTML элементийн загвар буюу Style-г өөрчлөх үед Selector-т зааж өгдөг. Declaration буюу Тунхаглалын хэсэгт нэг буюу түүнээс олон тунхаглалыг цэг таслалаар тусгаарлан шинж чанарт утгыг зааж өгдөг. CSS-д Declaration буюу Тунхаглал нь үргэлж цэг таслалаар төгсдөг бөгөөд суман хаалтад бичдэг {}."
+    },
+    "Lesson-2": {
+      "title": " Өнгө /Color/",
+      "body": "<p style=(background-color:Tomato; color: white)> Tomato </p>"
+    },
+    "Lesson-3": {
+      "title": "Margin, padding",
+      "body": "CSS нь margin-г тал бүрээс нь тодорхойлох шинж чанаруудтай байдаг, auto - хөтөч margin-г автоматаар тооцоолно ,% - margin авах зайг %-аар зааж өгч болно, урт - px, pt, cm, гэм мэт хэмжих нэгжээр зааж өгч болно, inherit - margin зайг эцэг элементээс удамшуулж болно. Example: div {border: 1px solid black; margin: 20px 40px 80px; background-color: yellow; }"
+    },
+    "Lesson-4": {
+      "title": "CSS Хүрээ /Border/",
+      "body": "Хүснэгтийн хүрээний хэлийг border шинж чанарт зааж өгнө. Example : table, th, td { border: 1px solid black;}"
+    },
+    "Lesson-5": {
+      "title": "Dispaly",
+      "body": "display шинж чанар нь дэлгэцийн зохион байгуулалтыг хянах хамгийн чухал CSS-н шинж чанар юм. display шинж чанарт элемент дэлгэцэд хэрхэн харагдах эсэхийг зааж өгнө. HTML элемент бүр ямар төрлийн элементээс хамаарч анхдагч дэлгэцийн утгатай байдаг. Ихэнх элементийн анхдагч дэлгэцийн утга нь block эсвэл inline утгатай байдаг. Block-level элемент => <div>,<h1> - <h6>,<p>,<form>,<header>,<footer>,<section>  Inline example: <span>,<a>,<img>   display:none; шинж чанар нь элементийг дэлгэцэд үзүүлэх эсвэл нуух үйлдлийг устгалгүйгээр хийх боломжийг олгодог бөгөөд ихэвчлэн JavaScript-н хамт хэрэглэгддэг."
+    },
+    "Lesson-6": {
       "title": "Flex",
-      "body": "sdjfsdjbf"
+      "body": "Float гэдэг үг нь хөвөх гэсэн утгатай бөгөөд цаашид бид энэ хичээл дээр хөвөх гэсэн утгаар нь ашиглах болно. Float шинж чанар нь агуулгыг хуудасны хаана хөвөхийг заахад ашигладаг бөгөөд дараах утгуудтай байдаг. Left, Right, None, inherit"
+    },
+    "Lesson-7": {
+      "title": " Pseudo-элемент сонгогч",
+      "body": "Pseudo-элементийн ::first-line шинж чанарыг текстийн эхний мөрөнд тусгай хэв маяг нэмэхэд ашигладаг.  Exapmle: p::first-line { color: #0000ff;  font-variant: small-caps;}"
+    },
+    "Lesson-8": {
+      "title": " Opacity",
+      "body": "opacity шинж чанарт элементийн тунгалаг байдлыг зааж өгнө. opacity шинж чанарт багаас илүү тод гэсэн утгыг 0.0 - 1.0-н хооронд зааж өгнө. Exaple: img {opacity: 0.5;}"
     }
   },
-  "JS": {
-    "Variables": {
-      "title": "Var, Let, Const",
-      "body": "Var- Хувьсагч,  Let - өөрчлөгдөг, Const - төгтмол өөрчлөгдөхгүй, "
+  "JAVASCRIPT": {
+    "Lesson-1": {
+      "title": "Variables",
+      "body": "JavaScript нь өгөгдлийн утгыг хадгалах савыг хувьсагч гэдэг. Var- Хувьсагч,  Let - өөрчлөгдөг, Const - төгтмол өөрчлөгдөхгүй, "
     },
-    "ArithmeticOperators": {
-      "title": "Adding, Multiplying, Const",
-      "body": "+ Addition, - Subtraction, * Multiplication, ++ Increment, -- Decrement"
+    "Lesson-2": {
+      "title": "Arithmetic Operators",
+      "body": "+ Addition, - Subtraction, * Multiplication, ++ Increment, -- Decrement Exapmle: const points = 100; const bonusPts = 40; x = points + bonusPts"
     },
-    "AssignmentOperators": {
-      "title": "JavaScript Assignment Operators",
-      "body": "image.png"
+    "Lesson-3": {
+      "title": "Alert, Prompt",
+      "body": "Параметрээр дамжуулан текстийг дэлгэцэнд үзүүлдэг. Prompt хэрэглэгчээс утга авдаг цонхтой"
+    },
+    "Lesson-4": {
+      "title": "If , Else",
+      "body": "Нөхцөл шалгах хийдэг (a == b) => Тэнцүү /Equlas/, (a != b)=> Ялгаатай /Not Equlas/ , (a < b)=> Бага /Less than/, (a <= b)=> Бага эсвэл Тэнцүү /Less than or equal to/ , (a < b)=> Их /Greater than/, (a <= b)=>Бага эсвэл Тэнцүү /Less than or equal to/ , (a > b)=>Их /Greater than/, (a >= b)=>Их эсвэл Тэнцүү /Greater than or equal to/  Exapmle: if (correctGuest === true) alert(ta amjiltai taasan)} else { alert(amjiltgui);"
+    },
+    "Lesson-5": {
+      "title": "Ramdom number function",
+      "body": "const number = prompt(too oruulna), const ramdom = Math.floor(Math.random() * number) + 1 , console.log(ramdom)"
+    },
+    "Lesson-6": {
+      "title": "Өгөгдлийн төрөл",
+      "body": "JavaScript хувьсагч нь олон төрлийн хувьсагч хадгалах боломжтой: тоо, тэмдэгт, объект, ... гэх мэт."
+    },
+    "Lesson-7": {
+      "title": "Функц /Function/",
+      "body": "JavaScript функц нь тодорхой үүргийг гүйцэтгэхэд зориулагдсан блок код юм. Функцийг дуудах үед функц нь ямар нэгэн үүргийг гүйцэтгэдэг. JavaScript функцийн бичиглэл: JavaScript-д фунцийн function түлхүүр үгээр тодорхойлж, араас нь нэр, () хаалт байна. Фунцийн нэр нь үсэг, тоо, доогуур зураас, долларын тэмдэгийг агуулж болно. /Хувьсагчтай адил/, () хаалтад параметрийн нэр байж болно. (parameter1, parameter2, ...) , функцийн гүйцэтгэх кодыг {} Хаалтад бичнэ. Example : function ner(parameter1, parameter2) {return..} function myFunc(n1, n2) {return n1 * n2; } "
+    },
+    "Lesson-8": {
+      "title": " Обьект /Objects/",
+      "body": "JavaScript-д хувьсагч нь өгөгдлийн утгыг хадгалах сав"
+    },
+    "Lesson-9": {
+      "title": " Массив /Array/",
+      "body": "Нэг хувьсагчид олон утга олгох боломжийг array буюу массив олгодог. Массив нь тусгай хувьсагч бөгөөд нэг хувьсагчид олон утга агуулдаг.  ARRAY METHODS : map()=> element бүрээр буцаана зөвхөн array дээр ажилладаг. filder()=> true, false утга буцаана, sort()=> -1, 1 буцаана forEach()=> дээгүүр нь давж явдаг,  includes(), some(), joi(), reduce()=>methods-г ашиглан массивын элемент бүрийг нэгтгэж массивыг багасгадаг, find(), findIndex(), indexOf()=> search хийгээд авдаг , fill()"
     }
   },
   "REACT": {
-    "Lesson1": {
+    "Lesson-1": {
       "title": "React",
       "body": "2011 онд Jordan  Walke гаргаж ирсэн. JS дотор HTML элемент оруулж ирсэн. React нь web хуудсыг componant болгон хуваагаад тэр componant-уудаараа WEB хуудсаа бүтээдэг. Componant хооронд өгөгдөл дамжуулах өөрчлөлт хийхийг REACT хариуцан ажилладаг . Componant нь HTML + JS = JSX буюу javascript XML-ын өргөтгөлөөр ашигладаг"
     },
-    "Lesson2": {
+    "Lesson-2": {
       "title": "React Componant",
       "body": "Кодын дахин ашиглалт өснө . Том хэмжээний код бичихгүй . Өөрчлөх сайжруулах алдааг засахад хялбар. Өгөгдлын эх үүсвэрийн 1 зарчимтай. Мод хэлбэрээр байрлана. react EVENT нь дээшээ дамждаг"
     },
-    "Lesson3": {
+    "Lesson-3": {
       "title": "Element",
       "body": "<></> => tag дотор байх ёстой"
     },
-    "Lesson4": {
+    "Lesson-4": {
       "title": "Function componant",
       "body": "Tag return хийхийг Function componant гэнэ. Бичигдэл: function Main(){ return (<div> <h1>LESSONS</h1></div>);}export default Main"
     },
-    "Lesson5": {
-      "title": "Hook",
-      "body": "useState ашиглаад function дотор (state- төлөв) бий болгодог. Ингэснээр Class componant ижилхэн болсон. use-ыг хэрэглэсэн бол HOOk гэсэн үг. Бичигдэл: const [lessons, setLessons] = useState({}) "
+    "Lesson-5": {
+      "title": "Props, Render",
+      "body": "props (бараг л JavaScript функцын параметр) , Render (DOM руу элементийг зурна, react элемент буцаана)"
     },
-    "Lesson6": {
+    "Lesson-6": {
+      "title": "Hook",
+      "body": "useState ашиглаад function дотор (state- төлөв) бий болгодог. Ингэснээр Class componant ижилхэн болсон. use-ыг хэрэглэсэн бол HOOk гэсэн үг. Бичигдэл: const [lessons, setLessons] = useState({}) . Hook rule: Loop дотор hook дуудахгүй, useState- хамгийн дээр тавигдах ёстой, Condition дотор дууддаггүй"
+    },
+
+    "Lesson-7": {
       "title": "Router",
-      "body": "Loop дотор hook дуудахгүй, useState- хамгийн дээр тавигдах ёстой, Condition дотор дууддаггүй"
+      "body": "a tag ижилхэн замчлал хийнэ. Бичигдэл: <Routes> <Route path=/ element={<Main />}></Route></Routes>  INSTALL: https://www.npmjs.com/package/react-router-dom"
+    },
+    "Lesson-8": {
+      "title": "Nagivate, React-toastify",
+      "body": "let navigate = useNavigate() => хуудсаас хуудасруу Үсэрнэ , const notify = () => toast(Wow so easy!) => мэдэгдэл нэмэх боломжийг олгоно. INSTALL: https://www.npmjs.com/package/react-router-dom"
     }
   }
 }
