@@ -60,7 +60,7 @@ function Footer() {
               <h5 className="m-0 ms-2">Дархан дээд сургууль</h5>
             </div>
           </Col>
-          <Col lg={2} md={4} sm={12} className="p-2">
+          <Col lg={2} md={3} sm={12} className="p-2">
             <div className="d-flex align-items-center ">
               <div className={classes.bg1}>
                 <img src="image/phone.png" alt="" />
@@ -68,7 +68,7 @@ function Footer() {
               <p className="m-0 ms-2">7070 0000</p>
             </div>
           </Col>
-          <Col lg={2} md={4} sm={12} className="p-2">
+          <Col lg={2} md={3} sm={12} className="p-2">
             <div className="d-flex align-items-center ">
               <div className={classes.bg1}>
                 <img src="image/mail.png" alt="" />
@@ -76,7 +76,7 @@ function Footer() {
               <p className="m-0 ms-2">darhan@edu.mn</p>
             </div>
           </Col>
-          <Col lg={3} md={4} sm={12} className="p-2">
+          <Col lg={3} md={6} sm={12} className="p-2">
             <div className="d-flex align-items-center ">
               <div className={classes.bg1}>
                 <img src="image/address.png" alt="" />
