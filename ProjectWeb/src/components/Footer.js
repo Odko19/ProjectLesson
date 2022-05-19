@@ -1,7 +1,7 @@
 import React from "react";
 
 import { makeStyles } from "@material-ui/core";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 const style = {
   bgColor: {
@@ -67,8 +67,8 @@ function Footer() {
   const classes = useStyles();
 
   return (
-    <>
-      <div className="container-xxl p-4" style={style.bgColor}>
+    <div style={style.bgColor}>
+      <div className="container-xxl p-4">
         <Row className="d-flex align-items-center">
           <Col lg={5} md={12} className="p-2">
             <div className="d-flex align-items-center ">
@@ -130,7 +130,7 @@ function Footer() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
