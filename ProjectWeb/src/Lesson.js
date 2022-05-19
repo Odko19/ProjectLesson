@@ -43,7 +43,9 @@ function Lesson() {
             );
           })}
       </Routes>
-      <Footer />
+      <div className="mt-3">
+        <Footer />
+      </div>
     </div>
   );
 }
