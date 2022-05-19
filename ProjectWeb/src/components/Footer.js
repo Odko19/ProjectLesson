@@ -34,10 +34,26 @@ const useStyles = makeStyles((theme) => ({
   },
 
   bg1: {
-    padding: "4% 6%",
+    padding: "4% 5%",
     border: "1px solid gray",
     [theme.breakpoints.down("768")]: {
       padding: "2% 3%",
+    },
+    borderRadius: "50%",
+    backgroundColor: "rgba(40,29,65, 0.9)",
+    "&:hover": {
+      backgroundColor: "black",
+    },
+  },
+
+  bg2: {
+    padding: "2.5% 3.3%",
+    border: "1px solid gray",
+    [theme.breakpoints.up("768")]: {
+      padding: "2% 3%",
+    },
+    [theme.breakpoints.up("992")]: {
+      padding: "2.5% 3.5%",
     },
     borderRadius: "50%",
     backgroundColor: "rgba(40,29,65, 0.9)",
@@ -78,8 +94,8 @@ function Footer() {
           </Col>
           <Col lg={3} md={6} sm={12} className="p-2">
             <div className="d-flex align-items-center ">
-              <div className={classes.bg1}>
-                <img src="image/address.png" alt="" />
+              <div className={classes.bg2}>
+                <img src="image/add.png" alt="" />
               </div>
               <p className="m-0 ms-2">
                 Улаанбаатар, Чингисийн Өргөн Чөлөө 17, Гурван гол оффис, 301
@@ -89,7 +105,7 @@ function Footer() {
           </Col>
         </Row>
         <div className="my-4" style={style.bor1}></div>
-        <div className="d-flex align-items-center my-5   flex-column-reverse">
+        <div className="d-flex align-items-center my-5   flex-column-reverse ">
           <div>
             <p className="m-0 text-center">
               <small>
