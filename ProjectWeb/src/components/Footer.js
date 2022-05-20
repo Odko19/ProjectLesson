@@ -61,6 +61,13 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "black",
     },
   },
+
+  font: {
+    fontSize: "0.8em",
+    [theme.breakpoints.down("768")]: {
+      fontSize: "2em",
+    },
+  },
 }));
 
 function Footer() {
@@ -81,7 +88,7 @@ function Footer() {
               <div className={classes.bg1}>
                 <img src="image/phone.png" alt="" />
               </div>
-              <p className="m-0 ms-2">7070 0000</p>
+              <p className={classes.font}>7070 0000</p>
             </div>
           </Col>
           <Col lg={2} md={3} sm={12} className="p-2">
