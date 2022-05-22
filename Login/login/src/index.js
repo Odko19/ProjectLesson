@@ -6,13 +6,16 @@ import Main from "./Main";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
+import LogProvider from "./context/LogContext";
 
 ReactDOM.render(
   <BrowserRouter>
-    <React.StrictMode>
-      <Main />
-      {/* <App/> */}
-    </React.StrictMode>
+    <LogProvider>
+      <React.StrictMode>
+        <Main />
+        {/* <App/> */}
+      </React.StrictMode>
+    </LogProvider>
   </BrowserRouter>,
   document.getElementById("root")
 );

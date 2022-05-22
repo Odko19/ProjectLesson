@@ -5,9 +5,12 @@ import { useNavigate } from "react-router-dom";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useLog } from "./context/LogContext";
 
 function App() {
-  const [username, setUsername] = useState();
+  // const [username, setUsername] = useState();
+  const [log, setLog] = useLog();
+
   // console.log({ status: "Амжилттай нэвтэрлээ." });
   let navigate = useNavigate();
 
@@ -18,7 +21,7 @@ function App() {
       password: e.target.elements.pass.value,
     };
     loginUser(value);
-    console.log(value);
+    setLog(value);
   }
 
   const loginUser = async (namePass) => {
