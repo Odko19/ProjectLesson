@@ -22,6 +22,7 @@ function App() {
     };
     loginUser(value);
     setLog(value);
+    localStorage.setItem("login", JSON.stringify(value));
   }
 
   const loginUser = async (namePass) => {
