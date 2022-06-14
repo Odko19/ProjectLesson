@@ -1,0 +1,45 @@
+.login-profile {
+  background-image: url(../../public/images/bg1.png);
+  background-size: 50vw;
+  width: 100%;
+  height: 100vh;
+}
+
+.bg1 {
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginBox {
+  width: 490px;
+  height: 507px;
+  border-radius: 20px;
+  padding: 30px;
+  background-color: white;
+}
+
+.font {
+  color: #f17228;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 27px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
