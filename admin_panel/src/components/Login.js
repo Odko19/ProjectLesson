@@ -1,15 +1,30 @@
 import "../style/login.css";
-import React from "react";
+import React, { useEffect } from "react";
 import { Row, Col, Button, Checkbox, Form, Input } from "antd";
+import { userService } from "../services/userService";
+import { useUser } from "../contexts/UserContext";
 
 export default function Login() {
+  const [user, setUser] = useUser();
+
+  console.log(user);
+
   const onFinish = (values) => {
-    console.log("Success:", values);
+    // console.log("Success:", values);
+    userService
+      .loginUser(values)
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.success === true) {
+          setUser(res);
+        }
+      });
   };
 
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
+
   return (
     <div>
       <Row>
@@ -24,31 +39,38 @@ export default function Login() {
                   <img src="images/logo/logo.svg" alt="" className="logo" />
                   <p className="font ">MStars Food Delivery</p>
                 </div>
+
                 <Form
+                  className="loginForm"
+                  name="basic"
+                  labelCol={{
+                    span: 8,
+                  }}
+                  wrapperCol={{
+                    span: 16,
+                  }}
+                  initialValues={{
+                    remember: true,
+                  }}
                   onFinish={onFinish}
                   onFinishFailed={onFinishFailed}
                   autoComplete="off"
                 >
                   <Form.Item
-                    className="font1"
-                    label="И-мэйл"
-                    name="gmail"
+                    label="Username"
+                    name="email"
                     rules={[
                       {
-                        type: "email",
                         required: true,
-                        message: "The input is not valid E-mail!",
+                        message: "Please input your username!",
                       },
                     ]}
                   >
-                    <br />
-                    <br />
-
                     <Input />
                   </Form.Item>
 
                   <Form.Item
-                    label=" Нууц үг"
+                    label="Password"
                     name="password"
                     rules={[
                       {
@@ -57,12 +79,26 @@ export default function Login() {
                       },
                     ]}
                   >
-                    {" "}
-                    <br />
                     <Input.Password />
                   </Form.Item>
 
-                  <Form.Item>
+                  {/* <Form.Item
+                    name="remember"
+                    valuePropName="checked"
+                    wrapperCol={{
+                      offset: 8,
+                      span: 16,
+                    }}
+                  >
+                    <Checkbox>Remember me</Checkbox>
+                  </Form.Item> */}
+
+                  <Form.Item
+                    wrapperCol={{
+                      offset: 8,
+                      span: 16,
+                    }}
+                  >
                     <Button type="primary" htmlType="submit">
                       Submit
                     </Button>
