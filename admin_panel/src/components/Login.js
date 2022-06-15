@@ -7,8 +7,6 @@ import { useUser } from "../contexts/UserContext";
 export default function Login() {
   const [user, setUser] = useUser();
 
-  console.log(user);
-
   const onFinish = (values) => {
     // console.log("Success:", values);
     userService
@@ -44,10 +42,10 @@ export default function Login() {
                   className="loginForm"
                   name="basic"
                   labelCol={{
-                    span: 8,
+                    span: 24,
                   }}
                   wrapperCol={{
-                    span: 16,
+                    span: 24,
                   }}
                   initialValues={{
                     remember: true,
@@ -57,12 +55,13 @@ export default function Login() {
                   autoComplete="off"
                 >
                   <Form.Item
-                    label="Username"
+                    label="И-мэйл "
                     name="email"
+                    className="font1"
                     rules={[
                       {
                         required: true,
-                        message: "Please input your username!",
+                        message: "И-мэйл хаягаа оруулна уу.",
                       },
                     ]}
                   >
@@ -70,37 +69,36 @@ export default function Login() {
                   </Form.Item>
 
                   <Form.Item
-                    label="Password"
+                    label="Нууц үг"
                     name="password"
                     rules={[
                       {
                         required: true,
-                        message: "Please input your password!",
+                        message: "Нууц үгээ оруулна уу. ",
                       },
                     ]}
                   >
-                    <Input.Password />
+                    <Input />
                   </Form.Item>
 
-                  {/* <Form.Item
+                  <Form.Item
                     name="remember"
                     valuePropName="checked"
                     wrapperCol={{
-                      offset: 8,
-                      span: 16,
+                      offset: 17,
+                      span: 7,
                     }}
                   >
-                    <Checkbox>Remember me</Checkbox>
-                  </Form.Item> */}
+                    Нууц үг мартсан?
+                  </Form.Item>
 
                   <Form.Item
                     wrapperCol={{
-                      offset: 8,
-                      span: 16,
+                      span: 24,
                     }}
                   >
-                    <Button type="primary" htmlType="submit">
-                      Submit
+                    <Button htmlType="submit" className="btnLogin ">
+                      Нэвтрэх
                     </Button>
                   </Form.Item>
                 </Form>

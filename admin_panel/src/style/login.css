@@ -43,3 +43,81 @@
   align-items: center;
   justify-content: center;
 }
+
+.ant-form-item-label label {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  color: #f17228;
+}
+
+.loginForm {
+  margin-top: 40px;
+}
+
+.ant-input {
+  height: 4vw !important;
+  border-radius: 25.2577px;
+}
+
+.ant-form-item-label
+  label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+  display: inline-block;
+  margin-right: 4px;
+  color: red;
+  font-size: 14px;
+  font-family: SimSun, sans-serif;
+  line-height: 1;
+  content: none;
+}
+.btnLogin {
+  width: 100%;
+  background: #f17228;
+  padding: 10px;
+  height: 4vw !important;
+  border-radius: 25.2577px;
+  color: white;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17.6804px;
+  line-height: 140%;
+}
+
+@media (min-width: 768px) {
+  .ant-input {
+    height: 5vw !important;
+    border-radius: 25.2577px;
+  }
+  .btnLogin {
+    width: 100%;
+    background: #f17228;
+    padding: 10px;
+    height: 5vw !important;
+    border-radius: 25.2577px;
+    color: white;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17.6804px;
+    line-height: 140%;
+  }
+}
+
+@media (min-width: 1240px) {
+  .ant-input {
+    height: 3vw !important;
+    border-radius: 25.2577px;
+  }
+  .btnLogin {
+    width: 100%;
+    background: #f17228;
+    padding: 10px;
+    height: 3vw !important;
+    border-radius: 25.2577px;
+    color: white;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17.6804px;
+    line-height: 140%;
+  }
+}

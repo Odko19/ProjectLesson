@@ -1,0 +1,40 @@
+.header {
+  background-color: #ffece1;
+  margin: 0;
+}
+.sider {
+  margin: 0;
+  padding: 0;
+}
+.logoImg {
+  margin-top: 19px;
+  margin-left: 20px;
+}
+hr {
+  border: 1px solid #f17228;
+  margin-right: 20px;
+}
+
+.logo-name {
+  display: flex;
+}
+.logo-name p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #f17228;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.font {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: #8b8885;
+}
+.contentLay {
+  background: linear-gradient(#f2c3a8, rgb(255, 255, 255));
+  bottom: 0;
+}
