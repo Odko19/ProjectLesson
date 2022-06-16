@@ -1,18 +1,31 @@
 .header {
   background-color: #ffece1;
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
+
 .sider {
   margin: 0;
   padding: 0;
 }
-.logoImg {
-  margin-top: 19px;
-  margin-left: 20px;
+.ant-btn {
+  border: none;
+  background: none;
+  font-weight: 600;
+  box-shadow: none;
+  color: #f17228;
+  margin-left: 5px;
 }
-hr {
-  border: 1px solid #f17228;
-  margin-right: 20px;
+.logoImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bor {
+  border-top: 1px solid #f17228;
+  margin-top: 30px;
 }
 
 .logo-name {
@@ -38,3 +51,8 @@ hr {
   background: linear-gradient(#f2c3a8, rgb(255, 255, 255));
   bottom: 0;
 }
+.ant-drawer-title {
+  text-align: center;
+}
+
+/* drawer reset form */

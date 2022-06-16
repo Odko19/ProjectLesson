@@ -4,13 +4,14 @@ import "antd/dist/antd.css";
 import Login from "./components/Login";
 import { useUser } from "./contexts/UserContext";
 import Dashboard from "./components/Dashboard";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [user, setUser] = useUser();
-  console.log(user);
 
-  // return <div className="App">{user ? <Dashboard /> : <Login />}</div>;
-  return <div className="App">{<Dashboard />}</div>;
+  return <div className="App">{user ? <Dashboard /> : <Login />}</div>;
+  // return <div className="App">{<Login />}</div>;
+  // return <div className="App">{<Dashboard />}</div>;
 }
 
 export default App;

@@ -9,24 +9,17 @@ export function useUser() {
 export const UserProvider = (props) => {
   const [user, setUser] = useState();
 
-  //   useEffect(() => {
-  //     if (localStorage.getItem("userInfo")) {
-  //       const data = JSON.parse(localStorage.getItem("user"));
-  //       setUser({
-  //         userName: data.name,
-  //         email: data.email,
-  //         address: data.address,
-  //         id: data._id,
-  //       });
-  //     }
-  //   }, []);
-  //   useEffect(() => {
-  //     if (user) {
-  //       localStorage.setItem("user", JSON.stringify(user));
-  //     } else {
-  //       localStorage.removeItem("user");
-  //     }
-  //   }, [user]);
+  // localStorage deeree hadgalj baigaa
+  useEffect(() => {
+    if (user) {
+      localStorage.setItem("user", JSON.stringify(user));
+    }
+  }, [user]);
+
+  // localStorage deerees awahdaa
+  useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem("user")));
+  }, []);
 
   return (
     <UserContext.Provider value={[user, setUser]}>
