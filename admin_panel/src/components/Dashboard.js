@@ -41,7 +41,7 @@ export default function Dashboard() {
     if (e.key === "1") {
       setVisible(true);
     } else {
-      window.localStorage.clear();
+      localStorage.removeItem("user");
       navigate(`/`);
     }
   };
@@ -212,7 +212,7 @@ export default function Dashboard() {
               },
             ]}
           >
-            <Input />\
+            <Input />
           </Form.Item>
           <Form.Item
             label="Нууц үг"

@@ -1,35 +1,48 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { otherServices } from "../../services/otherServices";
 import { useOrder } from "../../contexts/OrderContext";
-import { List, Row, Col, Divider } from "antd";
+import { List, Row, Col, Divider, Pagination } from "antd";
+import { useUser } from "../../contexts/UserContext";
 import "../../style/menuStyle/orders.css";
+import moment from "moment";
+
 export default function Orders() {
+  const [user, setUser] = useUser();
   const [order, setOrder] = useOrder();
+  const [pagination, setPagination] = useState();
+  console.log(order);
   useEffect(() => {
     otherServices
-      .getAllOrders()
+      .getAllOrders({ token: user?.token }, pagination)
       .then((e) => e.json())
-      .then((e) => setOrder(e.Orders));
-  }, []);
+      .then((e) => setOrder(e.data.docs));
+  }, [pagination]);
 
-  console.log(order);
+  function handler(e) {
+    setPagination(e);
+  }
+
   return (
     <div>
       <Divider orientation="left">Захиалгууд</Divider>
       <List
         header={
-          <div className="header">
-            <span>Он сар өдөр</span>
-            <span>Захиалга #</span>
-            <span>Хэрэглэгч</span>
-            <span>Захиалга</span>
-            <span>Нийт дүн</span>
-            <span>Төлбөр</span>
-            <span>Утас</span>
-            <span>Төлөв</span>
+          <div className="aaa">
+            <p>Он сар өдөр</p>
+            <p>Захиалга #</p>
+            <p>Хэрэглэгч</p>
+            <p>Захиалга</p>
+            <p>Нийт дүн</p>
+            <p>Төлбөр</p>
+            <p>Утас</p>
+            <p>Төлөв</p>
           </div>
         }
-        footer={<div>Footer</div>}
+        footer={
+          <div>
+            <Pagination defaultCurrent={1} total={50} onChange={handler} />
+          </div>
+        }
         bordered
         dataSource={order}
         renderItem={(item) => {
@@ -43,27 +56,11 @@ export default function Orders() {
                   <Col span={4}>{item.customer}</Col>
                   <Col span={4}>{item.customer}</Col>
                   <Col span={4}>{item.customer}</Col> */}
-                  <Col
-                    className="cols"
-                    xs={{ span: 5, offset: 1 }}
-                    lg={{ span: 6, offset: 2 }}
-                  >
-                    {item.customer}
-                  </Col>
-                  <Col
-                    className="cols"
-                    xs={{ span: 11, offset: 1 }}
-                    lg={{ span: 6, offset: 2 }}
-                  >
-                    {item.customer}
-                  </Col>
-                  <Col
-                    className="cols"
-                    xs={{ span: 5, offset: 1 }}
-                    lg={{ span: 6, offset: 2 }}
-                  >
-                    {item.customer}
-                  </Col>
+
+                  <>
+                    <Col>{moment(item.created_date).format("YYYY/MM/DD")}</Col>
+                    <Col>{item.status}</Col>
+                  </>
                 </Row>
               </List.Item>
             </>

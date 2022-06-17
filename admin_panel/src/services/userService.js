@@ -1,3 +1,4 @@
+// User login
 const loginUser = async (credentials) => {
   return await fetch("https://dev-api.mstars.mn/admin/login", {
     method: "POST",
@@ -21,6 +22,8 @@ const userInfoStorage = (userInfo) => {
   localStorage.setItem("token", userInfo.token);
   localStorage.setItem("userInfo", JSON.stringify(userInfo.data));
 };
+
+// settings update
 
 const editUser = async (data) => {
   return await fetch("https://dev-api.mstars.mn/admin/update/user/", {
