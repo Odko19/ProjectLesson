@@ -1,13 +1,10 @@
-.header {
-  text-align: center;
-  text-decoration: none;
-}
-.header span {
-  margin-right: 40px;
+.aaa {
+  display: flex;
+  justify-content: space-between;
 }
 
-.cols {
-  /* margin-left: 30px; */
-  padding-left: 50px;
-  /* color: aliceblue; */
-}
+/* .cols { */
+/* margin-left: 30px; */
+/* padding-left: 50px; */
+/* color: aliceblue; */
+/* } */
