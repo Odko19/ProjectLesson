@@ -179,6 +179,7 @@ export default function Dashboard() {
           <Form.Item
             label="И-мэйл "
             name="email"
+            className="form-drawer"
             rules={[
               {
                 required: true,
@@ -212,7 +213,7 @@ export default function Dashboard() {
               },
             ]}
           >
-            <Input />\
+            <Input />
           </Form.Item>
           <Form.Item
             label="Нууц үг"
@@ -245,7 +246,7 @@ export default function Dashboard() {
             }}
           >
             <Button htmlType="submit" className="btnLogin ">
-              Нэвтрэх
+              Хадгалах
             </Button>
           </Form.Item>
         </Form>

@@ -56,3 +56,10 @@
 }
 
 /* drawer reset form */
+
+.form-drawer {
+  color: black !important;
+}
+.ant-form-item {
+  color: black !important;
+}
