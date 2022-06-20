@@ -83,7 +83,10 @@ export default function Orders() {
           <Row className="head-list">
             <Col span={4}>
               <div className="flx-order">
-                <Checkbox onChange={onChangeChecked}></Checkbox>
+                <Checkbox
+                  onChange={onChangeChecked}
+                  className="check"
+                ></Checkbox>
                 <p className="font2"> Он сар өдөр</p>
               </div>
             </Col>
@@ -128,6 +131,10 @@ export default function Orders() {
                   <Col span={4}>{item.customer}</Col> */}
 
               <Col span={3}>
+                <Checkbox
+                  onChange={onChangeChecked}
+                  className="check"
+                ></Checkbox>
                 {moment(item.created_date).format("YYYY/MM/DD")}
               </Col>
               <Col span={3}>{item.status}</Col>
@@ -137,7 +144,24 @@ export default function Orders() {
 
               <Col span={3}>{item.status}</Col>
               <Col span={3}>{item.status}</Col>
-              <Col span={3}>{item.status}</Col>
+              <Col span={3}>
+                <Select
+                  labelInValue
+                  defaultValue={{
+                    value: "Хүлээн авсан",
+                    label: "Хүлээн авсан",
+                  }}
+                  style={{
+                    width: 120,
+                  }}
+                  onChange={handleChangeSelect}
+                >
+                  {/* <Option value="Received">Бүгд</Option> */}
+                  <Option value="Received">Хүлээн авсан</Option>
+                  <Option value="Success">Амжилттай</Option>
+                  <Option value="Canceled">Цуцлагдсан</Option>
+                </Select>
+              </Col>
             </Row>
           );
         }}
