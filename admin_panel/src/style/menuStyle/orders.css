@@ -44,13 +44,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
 }
 .flx-order {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 20px;
+}
+.flx-state {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .check {
   margin-right: 10px;

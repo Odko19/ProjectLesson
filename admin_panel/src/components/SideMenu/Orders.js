@@ -1,7 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { otherServices } from "../../services/otherServices";
 import { useOrder } from "../../contexts/OrderContext";
-import { List, Row, Col, Divider, Pagination, Select, Checkbox } from "antd";
+import {
+  List,
+  Row,
+  Col,
+  Divider,
+  Pagination,
+  Select,
+  Checkbox,
+  Space,
+  Menu,
+  Dropdown,
+  Button,
+} from "antd";
 
 import { useUser } from "../../contexts/UserContext";
 import "../../style/menuStyle/orders.css";
@@ -36,6 +48,38 @@ export default function Orders() {
   const onChangeChecked = (e) => {
     console.log(`checked = ${e.target.checked}`);
   };
+
+  // DropDown delete, look
+  const handleMenuClick = (e) => {
+    if (e.key === "1") {
+    } else {
+      const newArray = new Array(...order);
+
+      setOrder(
+        newArray.filter((item) => console.log(item.user_id === item.user_id))
+      );
+      // localStorage.setItem("user", JSON.stringify(newArray));
+      console.log(newArray);
+    }
+
+    console.log(e);
+  };
+
+  const menu = (
+    <Menu
+      onClick={handleMenuClick}
+      items={[
+        {
+          label: "Харах",
+          key: "1",
+        },
+        {
+          label: "Устах",
+          key: "2",
+        },
+      ]}
+    />
+  );
 
   return (
     <div className="content-padding">
@@ -105,11 +149,16 @@ export default function Orders() {
             <Col span={3}>
               <p className="font2">Төлбөр</p>
             </Col>
-            <Col span={3}>
+            <Col span={2}>
               <p className="font2">Утас</p>
             </Col>
-            <Col span={2}>
-              <p className="font2">Төлөв</p>
+            <Col span={3}>
+              <div className="flx-btn">
+                <p className="font2">Төлөв</p>
+                <div>
+                  <img src="/images/logo/point.svg" alt="" />
+                </div>
+              </div>
             </Col>
           </Row>
         }
@@ -143,24 +192,36 @@ export default function Orders() {
               <Col span={3}>{item.status}</Col>
 
               <Col span={3}>{item.status}</Col>
-              <Col span={3}>{item.status}</Col>
-              <Col span={3}>
-                <Select
-                  labelInValue
-                  defaultValue={{
-                    value: "Хүлээн авсан",
-                    label: "Хүлээн авсан",
-                  }}
-                  style={{
-                    width: 120,
-                  }}
-                  onChange={handleChangeSelect}
-                >
-                  {/* <Option value="Received">Бүгд</Option> */}
-                  <Option value="Received">Хүлээн авсан</Option>
-                  <Option value="Success">Амжилттай</Option>
-                  <Option value="Canceled">Цуцлагдсан</Option>
-                </Select>
+              <Col span={2}>{item.status}</Col>
+              <Col span={4}>
+                <div className="flx-state">
+                  <Select
+                    labelInValue
+                    defaultValue={{
+                      value: "Хүлээн авсан",
+                      label: "Хүлээн авсан",
+                    }}
+                    style={{
+                      width: 120,
+                    }}
+                    onChange={handleChangeSelect}
+                  >
+                    {/* <Option value="Received">Бүгд</Option> */}
+                    <Option value="Received">Хүлээн авсан</Option>
+                    <Option value="Success">Амжилттай</Option>
+                    <Option value="Canceled">Цуцлагдсан</Option>
+                  </Select>
+                  <div>
+                    {/* <img src="/images/logo/point.svg" alt="" /> */}
+                    <Dropdown overlay={menu}>
+                      <Button>
+                        <Space>
+                          <img src="/images/logo/point.svg" alt="" />
+                        </Space>
+                      </Button>
+                    </Dropdown>
+                  </div>
+                </div>
               </Col>
             </Row>
           );
