@@ -5,14 +5,12 @@ import {
   List,
   Row,
   Col,
-  Divider,
   Pagination,
   Select,
   Checkbox,
-  Space,
   Menu,
   Dropdown,
-  Button,
+  Drawer,
 } from "antd";
 
 import { useUser } from "../../contexts/UserContext";
@@ -23,6 +21,10 @@ export default function Orders() {
   const [user, setUser] = useUser();
   const [order, setOrder] = useOrder();
   const [pagination, setPagination] = useState();
+
+  // drawer open, close
+  const [visible, setVisible] = useState(false);
+  const [data, setData] = useState();
 
   // service
   useEffect(() => {
@@ -37,49 +39,43 @@ export default function Orders() {
     setPagination(e);
   }
 
-  // select option
-  const { Option } = Select;
-  const handleChangeSelect = (value) => {
-    console.log(value); // { value: "lucy", key: "lucy", label: "Lucy (101)" }
-  };
-
   // checkbox
-
   const onChangeChecked = (e) => {
     console.log(`checked = ${e.target.checked}`);
   };
 
-  // DropDown delete, look
-  const handleMenuClick = (e) => {
-    if (e.key === "1") {
-    } else {
-      const newArray = new Array(...order);
-
-      setOrder(
-        newArray.filter((item) => console.log(item.user_id === item.user_id))
-      );
-      // localStorage.setItem("user", JSON.stringify(newArray));
-      console.log(newArray);
-    }
-
-    console.log(e);
+  // select option 1
+  const selectOption1 = (e) => {
+    console.log(order);
   };
 
-  const menu = (
-    <Menu
-      onClick={handleMenuClick}
-      items={[
-        {
-          label: "Харах",
-          key: "1",
-        },
-        {
-          label: "Устах",
-          key: "2",
-        },
-      ]}
-    />
-  );
+  // select option
+  const { Option } = Select;
+  const handleOnChange = (value, item) => {
+    const newArray = new Array(...order);
+    const statusModified = newArray.filter((item1) => {
+      if (item1.user_id !== item.user_id) {
+        return (item.status = value.label);
+      } else {
+        return item1.status;
+      }
+    });
+    setOrder(statusModified);
+  };
+
+  // DropDown delete, look
+  function handleDelete(data) {
+    const newArray = new Array(...order);
+    setOrder(newArray.filter((item) => item._id !== data._id));
+    localStorage.setItem("order", JSON.stringify(newArray));
+  }
+  const onClose = () => {
+    setVisible(false);
+  };
+  function handleLook(data) {
+    setData(data);
+    setVisible(true);
+  }
 
   return (
     <div className="content-padding">
@@ -98,9 +94,8 @@ export default function Orders() {
             style={{
               width: 120,
             }}
-            onChange={handleChangeSelect}
+            onChange={selectOption1}
           >
-            {/* <Option value="Received">Бүгд</Option> */}
             <Option value="Received">Хүлээн авсан</Option>
             <Option value="Success">Амжилттай</Option>
             <Option value="Canceled">Цуцлагдсан</Option>
@@ -113,17 +108,6 @@ export default function Orders() {
 
       <List
         header={
-          // <div className="aaa">
-          //   <p>Он сар өдөр</p>
-          //   <p>Захиалга #</p>
-          //   <p>Хэрэглэгч</p>
-          //   <p>Захиалга</p>
-          //   <p>Нийт дүн</p>
-          //   <p>Төлбөр</p>
-          //   <p>Утас</p>
-          //   <p>Төлөв</p>
-          // </div>
-
           <Row className="head-list">
             <Col span={4}>
               <div className="flx-order">
@@ -172,13 +156,6 @@ export default function Orders() {
         renderItem={(item) => {
           return (
             <Row>
-              {/* <Col span={4}>{item.customer}</Col>
-                  <Col span={4}>{item.number}</Col>
-                  <Col span={4}>{item.customer}</Col>
-                  <Col span={4}>{item.customer}</Col>
-                  <Col span={4}>{item.customer}</Col>
-                  <Col span={4}>{item.customer}</Col> */}
-
               <Col span={3}>
                 <Checkbox
                   onChange={onChangeChecked}
@@ -186,39 +163,59 @@ export default function Orders() {
                 ></Checkbox>
                 {moment(item.created_date).format("YYYY/MM/DD")}
               </Col>
-              <Col span={3}>{item.status}</Col>
-              <Col span={3}>{item.status}</Col>
-              <Col span={3}>{item.status}</Col>
-              <Col span={3}>{item.status}</Col>
+              <Col span={3}>0001</Col>
+              <Col span={3}>Odko</Col>
+              <Col span={3}>Броккол......</Col>
+              <Col span={3}>{item.total_price}</Col>
 
-              <Col span={3}>{item.status}</Col>
-              <Col span={2}>{item.status}</Col>
+              <Col span={3}>{item.payment_type}</Col>
+              <Col span={2}>{item.phone}</Col>
               <Col span={4}>
                 <div className="flx-state">
                   <Select
                     labelInValue
                     defaultValue={{
-                      value: "Хүлээн авсан",
-                      label: "Хүлээн авсан",
+                      value: `${item.status}`,
+                      label: `${item.status}`,
                     }}
                     style={{
                       width: 120,
                     }}
-                    onChange={handleChangeSelect}
+                    onSelect={(value) => handleOnChange(value, item)}
                   >
                     {/* <Option value="Received">Бүгд</Option> */}
                     <Option value="Received">Хүлээн авсан</Option>
                     <Option value="Success">Амжилттай</Option>
                     <Option value="Canceled">Цуцлагдсан</Option>
                   </Select>
+
                   <div>
                     {/* <img src="/images/logo/point.svg" alt="" /> */}
-                    <Dropdown overlay={menu}>
-                      <Button>
-                        <Space>
-                          <img src="/images/logo/point.svg" alt="" />
-                        </Space>
-                      </Button>
+                    <Dropdown
+                      overlay={
+                        <Menu
+                          items={[
+                            {
+                              label: (
+                                <button onClick={() => handleLook(item)}>
+                                  "Харах"
+                                </button>
+                              ),
+                              key: "1",
+                            },
+                            {
+                              label: (
+                                <button onClick={() => handleDelete(item)}>
+                                  "Устах"
+                                </button>
+                              ),
+                              key: "2",
+                            },
+                          ]}
+                        />
+                      }
+                    >
+                      <img src="/images/logo/point.svg" alt="" />
                     </Dropdown>
                   </div>
                 </div>
@@ -227,6 +224,21 @@ export default function Orders() {
           );
         }}
       />
+      <Drawer
+        title="#00001"
+        placement="right"
+        onClose={onClose}
+        visible={visible}
+      >
+        <div>
+          <p>Дэлгэрэнгүй</p>
+          <div>
+            <p>Захиалга</p>
+            <p>{data && data.total_price}</p>
+          </div>
+          <> {data && data._id}</>
+        </div>
+      </Drawer>
     </div>
   );
 }
