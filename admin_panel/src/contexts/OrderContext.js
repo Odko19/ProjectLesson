@@ -19,7 +19,7 @@ export const OrderProvider = (props) => {
   // localStorage deerees awahdaa
   // useEffect(() => {
   //   setOrder(JSON.parse(localStorage.getItem("order")));
-  // }, []);
+  // });
 
   return (
     <OrderContext.Provider value={[order, setOrder]}>

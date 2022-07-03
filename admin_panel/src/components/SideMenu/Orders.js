@@ -20,8 +20,10 @@ import moment from "moment";
 export default function Orders() {
   const [user, setUser] = useUser();
   const [order, setOrder] = useOrder();
+  const [select, setSelect] = useState();
   const [pagination, setPagination] = useState();
 
+  console.log(select);
   // drawer open, close
   const [visible, setVisible] = useState(false);
   const [data, setData] = useState();
@@ -44,11 +46,6 @@ export default function Orders() {
     console.log(`checked = ${e.target.checked}`);
   };
 
-  // select option 1
-  const selectOption1 = (e) => {
-    console.log(order);
-  };
-
   // select option
   const { Option } = Select;
   const handleOnChange = (value, item) => {
@@ -63,7 +60,17 @@ export default function Orders() {
     setOrder(statusModified);
   };
 
-  // DropDown delete, look
+  // select option 1
+  const selectOption1 = (value) => {
+    const newArray = new Array(...order);
+    const selected = newArray.filter((item) => {
+      return item.status === value.label;
+    });
+
+    setSelect(selected);
+  };
+
+  // DropDown delete, itemlook
   function handleDelete(data) {
     const newArray = new Array(...order);
     setOrder(newArray.filter((item) => item._id !== data._id));
@@ -94,9 +101,10 @@ export default function Orders() {
             style={{
               width: 120,
             }}
-            onChange={selectOption1}
+            onSelect={(value) => selectOption1(value)}
           >
-            <Option value="Received">Хүлээн авсан</Option>
+            <Option value="all">bugd</Option>
+            <Option value="waiting">waiting</Option>
             <Option value="Success">Амжилттай</Option>
             <Option value="Canceled">Цуцлагдсан</Option>
           </Select>
@@ -152,7 +160,7 @@ export default function Orders() {
           </div>
         }
         bordered
-        dataSource={order}
+        dataSource={select ? select : order}
         renderItem={(item) => {
           return (
             <Row>
@@ -184,7 +192,7 @@ export default function Orders() {
                     onSelect={(value) => handleOnChange(value, item)}
                   >
                     {/* <Option value="Received">Бүгд</Option> */}
-                    <Option value="Received">Хүлээн авсан</Option>
+                    <Option value="waiting">waiting</Option>
                     <Option value="Success">Амжилттай</Option>
                     <Option value="Canceled">Цуцлагдсан</Option>
                   </Select>
